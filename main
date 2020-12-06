@@ -1,0 +1,24 @@
+while done==False:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            done=True
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_w:
+                newworm = mycritters.Worm()
+               buglist.append(newmoth)
+            if event.key == pygame.K_m:
+                newmoth = mycritters.Moth()
+                buglist.append(newmoth)
+            if event.key == pygame.K_a:
+                for bug in buglist:
+                    bug.change_color()
+
+    draw_garden()
+    
+    for bug in buglist:
+       bug.draw_bug(screen)
+
+    clock.tick(20)
+    pygame.display.flip()
+
+pygame.quit()
